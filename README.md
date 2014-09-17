@@ -1,4 +1,5 @@
-list-template
-=============
+#### Περί
+Τροποποημένο θέμα για τη [λίστα αλληλογραφίας](http://lists.gnome.gr/listinfo.cgi/team-gnome.gr) της ελληνικής κοινότητας του GNOME.
 
-Mailman template for http://lists.gnome.gr/listinfo.cgi/team-gnome.gr
+#### Ανάδραση
+Αν θέλετε να προτείνετε μια βελτίωση ή να αναφέρετε ένα πρόβλημα σχετικά με τη λειτουργία της ιστοσελίδας, επικοινωνήστε μαζί μας στη [λίστα ταχυδρομείου](http://lists.gnome.gr/listinfo.cgi/team-gnome.gr) ή βρείτε μας στα [social media](http://gnome.gr/#social_media)!
