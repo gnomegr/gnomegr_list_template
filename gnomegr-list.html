@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><MM-List-Name> Info Page</title>
+
+<style>
+body {
+background:url(http://gnome.gr/wp-content/themes/gnome-grass/images/static/html-bg.png) repeat-x scroll 0 10px #fff;
+height:100%;
+color:#2E3436;
+font-family: 'Cantarell','Droid Sans','DejaVu Sans',Arial,sans-serif;
+font-size:14px;
+line-height:1.6;
+width:100%;
+margin:0;
+padding:0;
+}
+
+h1,h2,h3,h4,h5,h6 {
+color:#3f3f3f;
+margin:auto;
+}
+
+h1 {
+font-size:27px;
+width:960px;
+}
+
+h2 {
+font-size:25px;
+}
+
+h3,dt {
+font-size:18px;
+color:#2E3436;
+margin:.4em 0 .5em;
+}
+
+h4 {
+font-size:16px;
+color:#ce5c00;
+}
+
+h5 {
+font-size:14px;
+}
+
+h6 {
+font-size:12px;
+}
+
+.main_header {
+font-size:14pt;
+font-family:Cantarell,'Droid Serif','DejaVu Serif',Cambria,Georgia,serif;
+line-height:130%;
+}
+
+a {
+color:#00F;
+}
+
+a:hover {
+text-decoration:none;
+}
+
+a img {
+border:none;
+}
+
+img.alignright {
+float:right;
+}
+
+img.aligncenter {
+padding-bottom:10px;
+margin:-25px auto 0;
+}
+
+dt a:hover {
+color:#fa7721;
+}
+
+ol {
+list-style:decimal;
+}
+
+ul {
+list-style:square;
+}
+
+dl,dt,h2,h3,h4,h5,h6,pre,table,address,fieldset {
+margin:.8em 0 .4em;
+}
+
+p,dd,ol {
+margin:.4em 0 1em;
+}
+
+table {
+border:0;
+width:100%;
+}
+
+td a {
+padding-right:10px;
+}
+
+select {
+height:27px;
+text-align:center;
+width:205px;
+margin:15px 20px 0 4px;
+}
+
+#global_domain_bar {
+height:10px;
+}
+
+#global_domain_bar div {
+max-width:940px;
+margin:0 auto;
+}
+
+#global_domain_bar a {
+margin-right:10px;
+float:right;
+background:#fff url(http://gnome.gr/wp-content/themes/gnome-grass/images/static/favicon.png) 8px 6px no-repeat;
+color:#555753;
+text-decoration:none;
+font-size:13px;
+-moz-border-radius:5px #8fb3d9;
+-webkit-border-radius:5px #8fb3d9;
+box-shadow:0 4px 2px -2px #8fb3d9;
+border-radius:5px;
+padding:2px 8px 2px 26px;
+}
+
+#header {
+margin:20px auto 0;
+}
+
+#header img {
+vertical-align:middle;
+float:left;
+margin-right:10px;
+}
+
+#header #logo h1 {
+margin:0;
+}
+
+#header #logo img {
+-webkit-transition:opacity 200ms ease-out;
+-moz-transition:opacity 200ms ease-out;
+transition:opacity 200ms ease-out;
+opacity:1;
+margin-left:-3px;
+height:76px;
+width:199px;
+}
+
+#header #logo img:hover {
+opacity:0.85;
+}
+
+#top_bar {
+background:#2e3436 url(http://gnome.gr/wp-content/themes/gnome-grass/images/static/top_bar-bg.png) top repeat-x;
+margin-top:23px;
+font-size:13px;
+line-height:normal;
+-moz-border-radius:6px;
+-webkit-border-radius:6px;
+border-radius:6px;
+-moz-box-shadow:0 1px 8px #b9bec4;
+-webkit-box-shadow:0 1px 8px #b9bec4;
+box-shadow:0 1px 8px #b9bec4;
+padding:8px 0;
+}
+
+#top_bar ul {
+list-style:none;
+margin:0;
+padding:0 5px;
+}
+
+#top_bar ul li {
+display:inline;
+margin:0 5px 0 0;
+}
+
+#top_bar a {
+color:#fff;
+text-decoration:none;
+-moz-border-radius:4px;
+-webkit-border-radius:4px;
+border-radius:4px;
+outline:0;
+-webkit-transition:background 100ms linear;
+-moz-transition:background 100ms linear;
+transition:background 100ms linear;
+text-shadow:0 1px 0 #000;
+padding:4px 7px;
+}
+
+#top_bar a:hover {
+background:rgba(100%,100%,100%,0.2);
+}
+
+#top_bar a:focus {
+background:rgba(100%,100%,100%,0.15);
+}
+
+#top_bar a:active,#top_bar li.current-menu-item a,#top_bar li.current-page-ancestor a {
+background:#1c2021 url(http://gnome.gr/wp-content/themes/gnome-grass/images/static/top_bar-item-bg.png) top repeat-x;
+-moz-box-shadow:inset 0 -1px 0 rgba(100%,100%,100%,0.4), inset 0 1px 3px rgba(0,0,0,0.4);
+-webkit-box-shadow:inset 0 -1px 0 rgba(100%,100%,100%,0.4), inset 0 1px 3px rgba(0,0,0,0.4);
+box-shadow:inset 0 -1px 0 rgba(100%,100%,100%,0.4), inset 0 1px 3px rgba(0,0,0,0.4);
+}
+
+#top_bar li a span.home {
+background:url(http://gnome.gr/wp-content/themes/gnome-grass/images/static/top_bar-item-home.png) no-repeat;
+padding-left:18px;
+}
+
+#footer-grass {
+background:url(http://gnome.gr/wp-content/themes/gnome-grass/images/static/grass.png) repeat-x scroll center top transparent;
+height:39px;
+margin-top:-33px;
+bottom:0;
+}
+
+#footer-art {
+margin-left:auto;
+margin-right:auto;
+clear:left;
+height:180px;
+margin-top:0;
+width:940px;
+background-image:url(http://gnome.gr/wp-content/themes/gnome-grass/images/static/i18n.png);
+}
+
+#footer {
+background:none repeat scroll 0 0 #D3D7CF;
+clear:left;
+color:#555753;
+margin-bottom:0;
+font-size:12px;
+line-height:1.4em;
+padding:20px 0;
+}
+
+#footer div.links div {
+float:left;
+margin-right:20px;
+}
+
+#footer div.links.right div {
+float:right;
+text-align:right;
+}
+
+#footer div.links div a,#footer div.links div strong {
+display:block;
+text-decoration:none;
+}
+
+#footer div.links div a:hover,#footer div.links div a:focus {
+display:block;
+text-decoration:underline;
+}
+
+#footer ul {
+list-style:none outside none;
+margin:0;
+padding:0;
+}
+
+#footer a {
+color:inherit;
+text-decoration:none;
+}
+
+#footer a:focus {
+background:#ececec;
+text-decoration:none!important;
+outline:0;
+-moz-border-radius:5px;
+-webkit-border-radius:5px;
+border-radius:5px;
+margin:-1px -3px;
+padding:1px 3px;
+}
+
+#footer #footnotes {
+margin-top:20px;
+}
+
+#footer #footnotes small {
+font-size:80%;
+}
+
+#footer li {
+display:inline;
+padding:0;
+}
+
+.clear {
+clear:both;
+display:block;
+overflow:hidden;
+visibility:hidden;
+width:0;
+height:0;
+}
+
+.clearfix:after {
+clear:both;
+content:' ';
+display:block;
+font-size:0;
+line-height:0;
+visibility:hidden;
+width:0;
+height:0;
+}
+
+.clearfix {
+display:block;
+}
+
+* html .clearfix {
+height:1%;
+}
+
+.grid_1,.grid_2,.grid_3,.grid_4,.grid_5,.grid_6,.grid_7,.grid_8,.grid_9,.grid_10,.grid_11,.grid_12,.grid_13,.grid_14,.grid_15,.grid_16 {
+display:inline;
+float:left;
+margin-left:10px;
+margin-right:10px;
+}
+
+.container_12 {
+margin-left:auto;
+margin-right:auto;
+width:960px;
+}
+
+.container_12 .grid_3 {
+width:220px;
+}
+
+.container_12 .grid_9 {
+width:700px;
+}
+
+.container {
+width:1000px;
+margin:0 auto;
+}
+
+#page {
+overflow:hidden;
+width:900px;
+#background-color:#fff;
+border-radius:10px 10px 10px 10px;
+padding:50px 30px 30px;
+}
+
+#page h2 {
+margin-bottom:30px;
+}
+
+#content #onecolumn {
+padding-bottom:15px;
+border-bottom:1px solid #D4D4D4;
+}
+
+#content h2 {
+letter-spacing:-1px;
+font-size:3em;
+}
+
+#two-column {
+padding-top: 10px;
+}
+
+.title {
+display:block;
+padding-left:60px;
+padding-bottom:1em;
+font-size:1.7em!important;
+font-weight:600;
+color:#252525;
+}
+
+.subscribe {
+background:url(http://gnome.gr/wp-content/themes/gnome-grass/images/static/subscribe.png) no-repeat left top;
+}
+
+.faq {
+background:url(http://gnome.gr/wp-content/themes/gnome-grass/images/static/faq.png) no-repeat left top;
+}
+
+.settings {
+background:url(http://gnome.gr/wp-content/themes/gnome-grass/images/static/settings.png) no-repeat left top;
+}
+
+.admin {
+background:url(http://gnome.gr/wp-content/themes/gnome-grass/images/static/admin.png) no-repeat left top;
+}
+
+#info_box {
+margin-top:30px;
+border:1px solid #ccc;
+background:#eeeeec;
+-moz-border-radius:5px;
+-webkit-border-radius:5px;
+border-radius:5px;
+padding:30px;
+}
+
+#info_box h3 {
+border-bottom:1px solid #ccc;
+}
+
+img.alignleft,#header #logo {
+float:left;
+}
+
+#top_bar li.selected a,#footer ul.menu > li > a {
+font-weight:700;
+}
+
+#footer ul li,h1,h2,h3 {
+margin:0;
+padding:0;
+}
+input[type="submit"] {
+		height:32px;
+		background-color:#729fcf;
+		border:1px solid #3465a4;
+		-moz-border-radius:6px;
+		-webkit-border-radius:6px;
+		border-radius:4px;
+		color:#fff;
+		font-weight:700
+}
+input[type="text"], input[type="password"] {
+		font:inherit;
+		padding:2px;
+		width:265px
+}
+</style>
+  </head>
+  <body>
+<!-- header -->
+<div id="global_domain_bar">
+	<div>
+		<a href="http://www.gnome.org/" target="_blank" title="Κοινότητα GNOME.org">GNOME.org</a>
+	</div>
+	<div>
+		<a class="extensions" href="http://gnome.gr/" target="_blank" title="Ελληνική κοινότητα GNOME">GNOME.gr</a>
+	</div>
+	<div>
+		<a class="extensions" href="http://wiki.gnome.gr/" target="_blank" title="Το wiki της κοινότητας">Wiki</a>
+	</div>
+</div>
+
+<div class="container_12" id="header">
+	<div class="grid_3" id="logo">
+		<h1><a title="Ελληνική κοινότητα του GNOME"><img alt="gnome_logo" src="http://gnome.gr/wp-content/themes/gnome-grass/images/static/gnome-logo.png"></a></h1>
+	</div>
+
+	<div class="grid_9" id="top_bar">
+		<div class="left">
+			<div>
+				<ul>
+					<li><a href="http://lists.gnome.gr/pipermail/team-gnome.gr/" title="Αρχειοθήκη λίστας GNOME">Αρχειοθήκη λίστας</a></li>
+					<li><a href="#faq" title="Συχνές ερωτήσεις">Συχνές ερωτήσεις</a></li>
+					<li><a href="#register" title="Εγγραφείτε στη λίστα">Εγγραφή χρήστη</a></li>
+					<li><a href="#settings" title="Αλλάξτε τις ρυθμίσεις σας">Ρυθμίσεις χρήστη</a></li>
+					<li><a href="#admin" title="Μέρος διαχειριστών">Διαχείριση</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="clear"></div>
+<!-- header end-->
+
+<div id="page" class="container_12">
+<div id="content">
+
+<div id="onecolumn">
+	<!-- <h1><MM-List-Name></h1><br> -->
+	<h3><MM-List-Description></h3>
+	<p><MM-List-Info></p>
+		<p>Για να επικοινωνήσετε με όλα τα μέλη της λίστας, στείλτε μήνυμα στο <a href="mailto:<MM-Posting-Addr>"><MM-Posting-Addr></A>.</p>
+</div>
+
+<div id="two-column">
+
+<div id="info_box">
+	<a id="faq" name="faq">
+	<h3 class="title faq">Συχνές ερωτήσεις</h3></a>
+	<dl>
+		<dt>Πώς θα εγγραφώ στη λίστα;</dt>
+		<dd>Για να εγγραφείτε στη λίστα αλληλογραφίας, ακολουθήστε τον σύνδεσμο <a href="#register">Εγγραφή</a>.</dd>
+		<dt>Πώς θα τροποποιήσω τις ρυθμίσεις της συνδρομής μου;</dt>
+		<dd>Συνδεθείτε με τα προσωπικά σας στοιχεία, στην περιοχή <a href="#settings">Αλλαγή των ρυθμίσεων ή απεγγραφή</a>.</dd>
+		<dt>Πώς θα δω παλιότερα μηνύματα της λίστας;</dt>
+		<dd>Για να δείτε τα μηνύματα που έχουν σταλθεί μέχρι τώρα, επισκεφθείτε <MM-Archive> το αρχείο αλληλογραφίας του <MM-List-Name>.</MM-Archive> <MM-Restricted-List-Message></dd>
+		<dt>Βρήκα ένα σφάλμα τι κάνω;</dt>
+		<dd>Παρακαλούμε, επικοινωνήστε μαζί μας στο <A HREF="mailto:<MM-Posting-Addr>"><MM-Posting-Addr></A>.</dd>
+	</dl>
+</div>
+
+
+<div id="info_box">
+<a name="register"><h3 class="title subscribe">Εγγραφή</h3></a>
+<MM-Subscribe-Form-Start>
+<table>
+<tr><td>Η ηλεκτρονική σας διεύθυνση:</td><td><MM-Subscribe-Box></td></tr>
+<tr><td>Το όνομα σας (προαιρετικό):</td><td><mm-fullname-box></td></tr>
+<tr><td  COLSPAN="3">
+<font size="-1">
+<p>Μπορείτε παρακάτω να καθορίσετε ένα κωδικό πρόσβασης. Ο κωδικός παρέχει μέτρια ασφάλεια αλλά αποτρέπει άλλους από το να παρεμβαίνουν με την εγγραφή σας. <b>ΜΗ ΧΡΗΣΙΜΟΠΟΙΗΣΕΤΕ ΚΑΠΟΙΟ ΧΡΗΣΙΜΟ ΚΩΔΙΚΟ ΕΔΩ</b> μιας και θα λαμβάνεται υπενθύμιση του κωδικού πρόσβασης μέσω ηλ. αλληλογραφίας στην αρχή κάθε μήνα.
+
+            <p>Αν προτιμήσετε να μην εισάγετε κωδικό πρόσβασης, θα δημιουργηθεί ένας τυχαίος και θα σας γνωστοποιηθεί με το μήνυμα καλωσορίσματος. Μπορείτε κάθε στιγμή να ζητήσετε υπενθύμιση του κωδικού σας καθώς επεξεργάζεστε τις προσωπικές σας προτιμήσεις.</p>
+</font>
+</tr></td>
+
+<!-- Optional Password Fields (can leave out for public lists as Mailman auto-generates) -->
+<!-- Password reminders can always be requested through web interface -->
+<!-- Most likely only to be used with lists with private archives or subscription lists -->
+<tr><td>Ο κωδικός πρόσβασης σας:</td><td><MM-New-Password-Box></td></tr>
+<tr><td>Επιβεβαίωση κωδικού πρόσβασης:</td><td><MM-Confirm-Password></td></tr>
+<!-- Part of the multilingual selector below -->
+<tr><td>Ποια γλώσσα προτιμάτε για να εμφανίζονται τα μηνύματά σας;</td><td><MM-list-langs></td></tr>
+</table>
+
+<p><mm-digest-question-start> Would you like to receive list mail batched in a daily digest?
+<MM-Undigest-Radio-Button> No <MM-Digest-Radio-Button> Yes <mm-digest-question-end></p>
+<!-- MM-List-Subscription-Msg gives extra details about the subscription rules of the list -->
+<!-- This is optional, and will include variations between subscription rules (confirm vs confirm and approve) -->
+<!-- On the majority of lists this can be commented out as subscription rules will simply be confirm -->
+
+<p style="text-align: center"><MM-Subscribe-Button><MM-Form-End></p>
+</div>
+
+<div id="info_box">
+	<a id="settings" name="settings">
+	<h3 class="title settings">Αλλαγή των ρυθμίσεων ή απεγγραφή</h3></a>
+	<p><MM-Options-Form-Start><MM-Editing-Options><MM-Form-End></p>
+</div>
+
+<div id="info_box">
+	<a id="admin" name="admin">
+	<h3 class="title admin">Διαχείριση</h3></a>
+	<p>	</p>
+	<p> Η λίστα αλληλογραφίας <a href="../listinfo.cgi/team-gnome.gr">Team</a>
+			διαχειρίζεται από το <a href="mailto:team-owner@lists.gnome.gr">mailman at gnome.gr</a><br>
+			<a href="../admin.cgi/team-gnome.gr">Διεπαφή διαχειριστών</a> της λίστας αλληλογραφίας Team (απαιτείται πιστοποίηση)<br>
+	</p>
+</div>
+
+
+</div>
+</div>
+</div>
+
+<!-- footer -->
+<div id="footer-art"></div>
+<div id="footer-grass"></div>
+
+<div id="footer">
+	<div class="container_12">
+		<div class="links grid_12" id="footer-left">
+			<div>
+				<ul>
+					<li><a href="http://www.gnome.gr/" target="_blank">Αρχική σελίδα</a></li>
+					<li><a href="http://gnome.gr/whygnome/">Γιατί GNOME;</a></li>
+					<li><a href="http://gnome.gr/screenshots/">Στιγμιότυπα</a></li>
+					<li><a href="http://gnome.gr/downloads/">Λήψη</a></li>
+					<li><a href="http://gnome.gr/contribute/">Συμμετοχή</a></li>
+					<li><a href="http://gnome.gr/contact/">Επικοινωνία</a></li>
+				</ul>
+			</div>
+
+			<div>
+				<ul>
+					<li><a href="http://www.gnome.org/" target="_blank">GNOME.org</a></li>
+					<li><a href="http://gnome.gr/" target="_blank">GNOME.gr</a></li>
+					<li><a href="http://planet.gnome.gr/" target="_blank">Πλανήτης GNOME.gr</a></li>
+					<li><a href="http://planet.gnome.org/" target="_blank">Πλανήτης GNOME.org</a></li>
+					<li><a href="http://wiki.gnome.gr/" target="_blank">Wiki GNOME.gr</a></li>
+					<li><a href="http://gnome.gr/contact/irc-gnome-el/">Κανάλι στο IRC</a></li>
+				</ul>
+			</div>
+
+			<div>
+				<ul>
+					<li><a href="https://www.facebook.com/gnomegr" target="_blank">Facebook</a></li>
+					<li><a href="http://twitter.com/gnomegr/" target="_blank">Twitter</a></li>
+					<li><a href="http://identi.ca/gnomegr" target="_blank">Identi.ca</a></li>
+					<li><a href="http://linkd.in/mHGOIb" target="_blank">Linkedin</a></li>
+					<li><a href="https://plus.google.com/+GnomeGr" target="_blank">Google+</a></li>
+				</ul>
+			</div>
+			</div>
+
+		<div class="clear"></div>
+			
+			<div class="links" id="footnotes">
+				<p>Πνευματικά δικαιώματα © 2008‒2014 <strong>Ελληνική κοινότητα του GNOME</strong><br>
+				Powered by <a href="http://www.list.org/" target="_blank">MailMan</a>,
+				<a href="https://www.python.org/" target="_blank">Python</a> and <a href="http://www.gnu.org/" target="_blank">GNU.</a> Modified
+				<a href="https://github.com/quimgil/mailman-templates" target="_blank">mailman-template</a>
+				under <a href="https://creativecommons.org/licenses/by/3.0/">CC-BY 3.0</a>.
+				</p>
+			</div>
+	</div>
+
+	<div class="clear"></div>
+</div>
+<!-- footer end -->
+</body>
+</html>
